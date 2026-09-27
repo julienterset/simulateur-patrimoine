@@ -149,13 +149,13 @@
             </div>
             <div class="row2">
               <div class="field">
-                <label>Épargne mensuelle totale <span class="val" id="v_epargneMensuelle"></span></label>
-                <input type="range" id="r_epargneMensuelle" min="0" max="6500" step="50">
+                <label>Épargne mensuelle<span class="val" id="v_epargneMensuelle"></span></label>
+                <input type="range" id="r_epargneMensuelle" min="0" max="2500" step="50">
                 <input type="number" id="n_epargneMensuelle" step="10">
               </div>
               <div class="field">
                 <label>Primes annuelles épargnées <span class="val" id="v_primesAnnuelles"></span></label>
-                <input type="range" id="r_primesAnnuelles" min="0" max="30000" step="500">
+                <input type="range" id="r_primesAnnuelles" min="0" max="6000" step="500">
                 <input type="number" id="n_primesAnnuelles" step="100">
               </div>
             </div>
@@ -189,12 +189,12 @@
               Aujourd'hui (<span id="anneeCouranteLbl"></span>) : Julien <span id="ageJulienLbl"></span> ans, Claire <span id="ageClaireLbl"></span> ans.
             </div>
             <div class="field">
-              <label>Âge de départ à la retraite (on arrête d'épargner) <span class="val" id="v_ageRetraite"></span></label>
+              <label>Âge de départ à la retraite (on arrête d'épargner tous les mois) <span class="val" id="v_ageRetraite"></span></label>
               <input type="range" id="r_ageRetraite" min="55" max="75" step="1">
               <input type="number" id="n_ageRetraite" step="1">
             </div>
             <div class="field">
-              <label>Rente mensuelle brute (complément à la retraite d'état), en pouvoir d'achat d'aujourd'hui <span class="val" id="v_rente"></span></label>
+              <label>Rente mensuelle brute (complément à la retraite d'état) <span class="val" id="v_rente"></span></label>
               <input type="range" id="r_rente" min="0" max="6000" step="50">
               <input type="number" id="n_rente" step="50">
             </div>
@@ -310,9 +310,9 @@ const CONFIG = {
 
 // ---------- Defaults (from Hypothèses / Patrimoine / Projets) ----------
 const DEFAULTS = {
-  capitalInitial: 320236,
-  epargneMensuelle: 1833,
-  primesAnnuelles: 3000,
+  capitalInitial: 300000,
+  epargneMensuelle: 1500,
+  primesAnnuelles: 4000,
   rendement: 0.045,
   inflation: 0.02,
   valeurResidenceActuelle: 250000,
@@ -320,7 +320,7 @@ const DEFAULTS = {
   valeurNouvelleResidence: 500000,
   revalo: 0.005,
   ageRetraite: 67,
-  rente: 3000,
+  rente: 0,
   horizonAge: 74
 };
 
@@ -332,16 +332,7 @@ const DEFAULT_EVENTS = [
   {name:"Réfection sol", year:2028, amount:-15000},
   {name:"Repeinture (post façade)", year:2029, amount:-10000},
   {name:"Voiture Claire", year:2028, amount:-20000},
-  {name:"Voyage 2027", year:2027, amount:-10000},
-  {name:"Voyage 2028", year:2028, amount:-10000},
-  {name:"Voyage 2029", year:2029, amount:-10000},
-  {name:"Voyage 2030 (20 ans de mariage)", year:2030, amount:-15000},
-  {name:"Voyage 2031", year:2031, amount:-10000},
-  {name:"Voyage 2032", year:2032, amount:-10000},
-  {name:"Voyage 2033", year:2033, amount:-10000},
-  {name:"Voyage 2034", year:2034, amount:-10000},
-  {name:"Voyage 2035", year:2035, amount:-10000},
-  {name:"Héritage Tatie Michou", year:2040, amount:250000},
+  {name:"Héritage Tatie Michou", year:2040, amount:200000},
   {name:"Héritage parents Ju", year:2045, amount:150000},
   {name:"Achat / vente résidence", year:2035, amount:-250000}
 ];
